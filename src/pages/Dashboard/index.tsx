@@ -43,7 +43,7 @@ const Dashboard: React.FC = () => {
 
   return (
     <>
-      <Header />
+      <Header activatedLink="list" />
       <Container>
         <CardContainer>
           <Card>
