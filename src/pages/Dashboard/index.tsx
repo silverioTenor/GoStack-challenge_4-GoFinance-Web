@@ -46,7 +46,12 @@ const Dashboard: React.FC = () => {
           const timestamp = new Date(transact.created_at).getTime();
 
           transact.formattedDate = formatDate(timestamp);
-          transact.formattedValue = formatValue(transact.value);
+
+          if (transact.type === 'outcome') {
+            transact.formattedValue = `- ${formatValue(transact.value)}`;
+          } else {
+            transact.formattedValue = formatValue(transact.value);
+          }
 
           return transact;
         });
